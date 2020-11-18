@@ -70,7 +70,7 @@ export const scrapeDirect = async (config: { [key: string]: string }) => {
     // keep refreshing until "Add to Cart" is available
     while (true) {
       try {
-        await page.waitForSelector('.productHero-component .add-to-cart', { timeout: 10000 })
+        await page.waitForSelector('.productHero-component .add-to-cart:not(.hide)', { timeout: 10000 })
         break
       } catch (error) {
         await page.reload()
