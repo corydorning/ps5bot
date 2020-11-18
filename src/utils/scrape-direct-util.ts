@@ -19,7 +19,8 @@ export const scrapeDirect = async (config: { [key: string]: string }) => {
 
   const browser = await puppeteer.launch({
     headless: false,
-    args: ['--window-size=1920,1080'],
+    // disable flags are for cc iframe
+    args: ['--window-size=1920,1080', '--disable-features=site-per-process', '--disable-web-security', '--disable-features=IsolateOrigins,site-per-process'],
     defaultViewport: null
   })
 
@@ -103,17 +104,20 @@ export const scrapeDirect = async (config: { [key: string]: string }) => {
 
     // credit card details
     // wait for iframe
-    await page.waitForSelector('#cardNumber-container iframe')
+    const iframe = await page.waitForSelector('#cardNumber-container iframe')
+    const frame = await iframe.contentFrame();
+    const ccInput = '[name="credit-card-number"]'
+    frame.type(ccInput, creditCardNumber);
 
-    // delay
-    await page.waitForTimeout(10000)
-
-    page.frames().find(async frame => {
-      // type cc number into iframe input
-      const ccInput = '[name="credit-card-number"]'
-      await frame.waitForSelector(ccInput, { timeout: 0 })
-      await frame.type(ccInput, creditCardNumber)
-    })
+    await page.waitForTimeout(5000)
+    
+    // page.frames().find(async frame => {
+    //   // type cc number into iframe input
+    //   const ccInput = '[name="credit-card-number"]'
+    //   await frame.waitForSelector(ccInput)
+    //   frame.type(ccInput, creditCardNumber, { delay: 100 });
+    // })
+    
     
     // type rest of cc details
     await page.type('#accountHolderName', `${firstName} ${lastName}`)
