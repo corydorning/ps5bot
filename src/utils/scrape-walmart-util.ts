@@ -1,5 +1,12 @@
-import * as puppeteer from 'puppeteer'
 import * as notifier from 'node-notifier'
+
+// dropin replacement for puppeteer, allows plugin usage
+const puppeteer = require('puppeteer-extra')
+
+// add stealth plugin and use defaults (all evasion techniques)
+const stealth = require('puppeteer-extra-plugin-stealth')
+puppeteer.use(stealth())
+
 
 export const scrapeWalmart = async (config: { [key: string]: string }) => {
   const {
