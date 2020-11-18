@@ -11,7 +11,7 @@ Should work on Linux, macOS, or Windows.
     1. version should be >12.9
  2. [Install git](https://git-scm.com/)
  3. open up terminal/command prompt and clone this project
-    1. `git clone https://github.com/corydorning/PS5bot`
+    1. `git clone https://github.com/corydorning/ps5bot.git`
  4. go to project directory `cd PS5bot`
  6. Install dependencies by running `npm install`
 
