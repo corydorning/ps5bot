@@ -127,9 +127,9 @@ export const scrapeDirect = async (config: { [key: string]: string }) => {
     waitAndClick('.checkout-cta__review-order-total', page)
 
     // place order
-    // const placeOrderButton = '.checkout-cta__place-order'
-    // page.waitForSelector(placeOrderButton, { timeout: 0 })
-    // waitAndClick(placeOrderButton, page)
+    const placeOrderButton = '.checkout-cta__place-order'
+    page.waitForSelector(placeOrderButton, { timeout: 0 })
+    waitAndClick(placeOrderButton, page)
 
     notifier.notify({
       title: 'PlayStation Direct',
