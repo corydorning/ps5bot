@@ -32,10 +32,10 @@ export const scrapeDirect = async (config: { [key: string]: string }) => {
     let URL
     
     // controller url (used for testing)
-    URL = 'https://direct.playstation.com/en-us/accessories/accessory/dualsense-wireless-controller.3005715'
+    //URL = 'https://direct.playstation.com/en-us/accessories/accessory/dualsense-wireless-controller.3005715'
 
     // console url
-    //URL = 'https://direct.playstation.com/en-us/consoles/console/playstation5-console.3005816'
+    URL = 'https://direct.playstation.com/en-us/consoles/console/playstation5-console.3005816'
     
     // digital url
     //URL = 
