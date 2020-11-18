@@ -1,7 +1,7 @@
 # PS5bot
 NOTE: I am not responsible for any misuse of this script or for any purchases that may be made by this script. Use at your own risk. If you don't know what you are doing, this may not be for you.
 
-Rewrite of [VVNoodle's bot](https://github.com/corydorning/PS5bot) to work with accounts to make things faster. I've found the puppeteer rewrites I've done to also be more reliable. Will add additional sites if time permists. Also do not require `yarn`
+Rewrite of [VVNoodle's bot](https://github.com/corydorning/PS5bot) to work with accounts to make things faster. I've rewritten most of the puppeteer rules for Sony and Walmart (haven't gotten around to Target yet) and they seem to be much more reliable. Will add additional sites if time permits. Also no longer requires `yarn`.
 
 ## Installation overview
 Should work on Linux, macOS, or Windows.
