@@ -176,11 +176,13 @@ export const scrapeTarget = async (config: { [key: string]: string }) => {
       sound: true
     })
 
-    // await page.waitForTimeout(4000)
-    // const placeOrderButton = await page.$(
-    //   'button[data-test="placeOrderButton"]'
-    // )
-    // await placeOrderButton.click()
+    await page.waitForTimeout(4000)
+    const placeOrderButton = await page.$(
+      'button[data-test="placeOrderButton"]'
+    )
+    await placeOrderButton.click()
+
+    console.log('Target order placed!')
   } catch (error) {
     console.log(error)
   } finally {
